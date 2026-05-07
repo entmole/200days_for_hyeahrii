@@ -1,186 +1,803 @@
-<!DOCTYPE html>
-<html class="scroll-smooth scroll-snap-y scroll-snap-mandatory" lang="ko">
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>우리 함께한 200일</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet">
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary": "#874e58",
-                        "primary-container": "#ffb6c1",
-                        "on-primary": "#ffffff",
-                        "background": "#f9f9f9",
-                        "on-surface": "#1a1c1c",
-                        "on-surface-variant": "#514345",
-                        "secondary-container": "#fed65b",
-                        "on-secondary-container": "#745c00",
-                        "primary-fixed": "#ffd9de",
-                        "on-primary-fixed": "#360c17",
-                        "on-primary-fixed-variant": "#6b3741"
-                    },
-                    "fontFamily": {
-                        "headline-lg": ["Noto Serif"],
-                        "display-lg": ["Noto Serif"],
-                        "body-md": ["Plus Jakarta Sans"],
-                        "body-lg": ["Plus Jakarta Sans"],
-                        "label-sm": ["Plus Jakarta Sans"]
-                    }
-                }
+<!DOCTYPE html><html class="scroll-smooth scroll-snap-y scroll-snap-mandatory" lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>우리 함께한 200일</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#4e4448",
+                    "tertiary-fixed": "#eddfe4",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#514345",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface-tint": "#874e58",
+                    "secondary": "#735c00",
+                    "on-background": "#1a1c1c",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-bright": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "on-secondary-fixed-variant": "#574500",
+                    "surface-container-low": "#f3f3f4",
+                    "secondary-fixed": "#ffe088",
+                    "tertiary": "#665c60",
+                    "primary-container": "#ffb6c1",
+                    "background": "#f9f9f9",
+                    "outline": "#847375",
+                    "outline-variant": "#d6c2c3",
+                    "inverse-primary": "#fcb3be",
+                    "on-primary-container": "#7b444e",
+                    "surface-container": "#eeeeee",
+                    "primary": "#874e58",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary-container": "#5c5256",
+                    "on-primary-fixed": "#360c17",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#211a1d",
+                    "surface-dim": "#dadada",
+                    "on-surface": "#1a1c1c",
+                    "secondary-container": "#fed65b",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed": "#ffd9de",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed-dim": "#e9c349",
+                    "primary-fixed-dim": "#fcb3be",
+                    "tertiary-fixed-dim": "#d1c3c8",
+                    "tertiary-container": "#d4c6cb",
+                    "surface-variant": "#e2e2e2",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#745c00",
+                    "on-primary-fixed-variant": "#6b3741",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "8rem",
+                    "container-max": "1140px",
+                    "gutter": "24px",
+                    "margin-page": "5vw",
+                    "element-gap": "2rem"
+            },
+            "fontFamily": {
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Noto Serif"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
             }
-        }
+          },
+        },
+      }
     </script>
-    <style>
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
         .bg-stationery {
             background-color: #ffffff;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
-            position: relative;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-blend-mode: overlay;
         }
-        /* 깨진 SVG를 대체할 깔끔한 노이즈 효과 */
-        .bg-stationery::before {
-            content: "";
-            position: absolute; inset: 0;
-            opacity: 0.05;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        .floating-heart {
+            animation: float 6s ease-in-out infinite;
         }
-        .floating-heart { animation: float 6s ease-in-out infinite; }
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
             50% { transform: translateY(-40px) rotate(10deg); opacity: 0.6; }
         }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .cursor-heart { position: fixed; pointer-events: none; z-index: 9999; color: #FFB6C1; font-size: 14px; animation: heartFadeOut 1s forwards; }
+        .letter-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(135, 78, 88, 0.05), 0 8px 10px -6px rgba(135, 78, 88, 0.05);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .letter-card:hover {
+            transform: translateY(-2px);
+        }
+    
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .cursor-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            color: #FFB6C1;
+            font-size: 14px;
+            animation: heartFadeOut 1s forwards;
+        }
         @keyframes heartFadeOut {
             0% { transform: translateY(0) scale(1); opacity: 0.8; }
             100% { transform: translateY(-50px) scale(0.5); opacity: 0; }
         }
-        @keyframes heart-burst {
-            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-            100% { transform: translate(calc(-50% + var(--tw-tx)), calc(-50% + var(--tw-ty))) scale(var(--tw-scale)) rotate(var(--tw-rotation)); opacity: 0; }
+    
+        html {
+            scroll-snap-type: y mandatory;
         }
-        .heart-particle { position: fixed; pointer-events: none; z-index: 100; animation: heart-burst 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
+        section, footer {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            position: relative;
+        }
+        .next-section-btn {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: #874e58;
+            cursor: pointer;
+            z-index: 20;
+            transition: opacity 0.3s ease;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+            40% {transform: translateX(-50%) translateY(-10px);}
+            60% {transform: translateX(-50%) translateY(-5px);}
+        }
     </style>
-</head>
-<body class="bg-background text-on-surface">
-    <header class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-md border-b border-yellow-200/30">
-        <nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-            <div class="text-2xl font-bold text-rose-400 italic font-headline-lg">혜리 ❤️ 세환의 스케치북</div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-rose-500 font-semibold border-b-2 border-yellow-400" href="#hero">우리의 순간</a>
-                <a class="text-rose-300/80 hover:text-rose-500" href="#gallery">추억 갤러리</a>
-                <a class="text-rose-300/80 hover:text-rose-500" href="#letter">나의 단짝 혜리에게</a>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden" id="hero">
-            <div class="relative z-10 text-center px-4">
-                <h1 class="font-display-lg text-6xl text-primary mb-8">우리가 만난 지</h1>
-                <div class="inline-flex flex-col items-center gap-4 bg-white/40 backdrop-blur-xl p-12 rounded-[3rem] border border-white/60 shadow-xl">
-                    <div class="text-sm text-on-primary-fixed-variant mb-2">Since 2025.10.23</div>
-                    <div class="flex items-baseline gap-2">
-                        <span class="text-7xl md:text-9xl text-primary font-bold" id="d-day-counter">0</span>
-                        <span class="text-2xl text-primary">일</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 px-4 max-w-7xl mx-auto" id="gallery">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl text-primary font-headline-lg">우리의 소중한 기록들</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="group bg-white p-3 rounded-2xl shadow-sm reveal">
-                    <img class="w-full aspect-square object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida/ADBb0ujBSNw_ahz_UbZYN6_NQrGkFm0ggmvbL0Wi9bk_trNaRlaKL9NkhnLsJcO3rsAb0tyrbmRSzI2lvSrTFZ6KpCP0E_3rmwBPerKT5N23b4zMazk14jSBRh1shcToALcdMYIn-hU5YZv-d92PetKTNJa-WtRp9Ze73HdIOK7MaNxslvYOkQ2T-9akRLwQ-i9BcW-G2KbB1N9bn7FOokZQrmrWvlpgMzaF35bNrBxctMm4YVi1jOBKNTsoaVKtr3HPHwu2BqRtBso27g" alt="추억">
-                </div>
-                </div>
-        </section>
-
-        <section class="py-20 relative" id="letter">
-            <div class="max-w-4xl mx-auto px-4">
-                <div class="bg-stationery p-12 md:p-20 rounded-[4rem] shadow-2xl border border-yellow-100/50 relative overflow-hidden reveal">
-                    <div class="relative z-10 space-y-8">
-                        <div class="text-center">
-                            <h3 class="text-3xl text-primary italic mb-2">My Dearest...</h3>
-                            <div class="w-16 h-px bg-yellow-400 mx-auto"></div>
-                        </div>
-                        <div class="bg-white/80 backdrop-blur-sm p-8 rounded-[2rem] text-center">
-                            <p class="text-xl md:text-2xl leading-relaxed text-on-surface-variant">
-                                혜리야 안녕? 너의 남자친구 세환이야ㅎㅎ 갑자기 이 홈페이지를 보고 놀랐을거야ㅎ.ㅎ 사실 내가 조금씩 너에게 200일에 보여주려고 만든 홈페이지인데, 너가 맘에 들어하면 좋겠어! 우리의 200일은 앞으로 만날 날에 비하면 이제 시작이라고 생각해❤️ 지금처럼 우리 잘 지내고, 서로 자신의 의도와는 다르게 속상하게 할 수 있지만, 미안하다고 말하고 내 진심은 그래도 너를 향해있다는 것을 알아줬으면 좋겠어..!!
-                            </p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-primary italic">혜리의 단짝 친구</p>
-                            <p class="text-2xl text-primary font-bold">세환이가</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // 1. D-Day 계산 로직
-        (function() {
-            const startDate = new Date('2025-10-23');
-            const today = new Date();
-            startDate.setHours(0, 0, 0, 0);
-            today.setHours(0, 0, 0, 0);
-            const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
-            document.getElementById('d-day-counter').textContent = diffDays;
-        })();
-
-        // 2. 스크롤 애니메이션
+<style>
+@keyframes heart-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--tw-tx)), calc(-50% + var(--tw-ty))) scale(var(--tw-scale)) rotate(var(--tw-rotation));
+    opacity: 0;
+  }
+}
+.heart-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  animation: heart-burst 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script></head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-md border-b border-yellow-200/30 shadow-[0_4px_30px_rgba(255,182,193,0.1)]">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold text-rose-400 italic font-headline-lg">혜리 ❤️ 세환의 스케치북</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="pb-1 font-body-md hover:text-rose-500 text-rose-500 border-b-2 border-yellow-400 font-semibold" href="#hero">우리의 순간</a>
+<a class="text-rose-300/80 hover:text-rose-500 transition-colors font-body-md" href="#gallery">추억 갤러리</a>
+<a class="text-rose-300/80 hover:text-rose-500 transition-colors font-body-md" href="#letter">나의 단짝 혜리에게</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-rose-300 transition-colors hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden" id="hero">
+<div class="absolute inset-0 pointer-events-none">
+<span class="material-symbols-outlined absolute text-rose-200 floating-heart text-4xl" style="top: 20%; left: 10%;">favorite</span>
+<span class="material-symbols-outlined absolute text-rose-100 floating-heart text-2xl" style="top: 40%; left: 85%;">favorite</span>
+<span class="material-symbols-outlined absolute text-rose-200 floating-heart text-3xl" style="top: 70%; left: 15%;">favorite</span>
+<span class="material-symbols-outlined absolute text-rose-100 floating-heart text-5xl" style="top: 15%; left: 75%;">favorite</span>
+</div>
+<div class="relative z-10 text-center px-4">
+<h1 class="font-display-lg text-display-lg text-primary mb-8 tracking-tight">우리가 만난 지</h1>
+<div class="inline-flex flex-col items-center gap-4 bg-white/40 backdrop-blur-xl p-12 rounded-[3rem] border border-white/60 shadow-[0_20px_50px_rgba(255,182,193,0.2)]">
+<div class="font-label-sm text-label-sm text-on-primary-fixed-variant mb-2">Since 2025.10.23</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-7xl md:text-9xl text-primary font-bold" id="d-day-counter">196</span>
+<span class="font-headline-md text-headline-md text-primary">일</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mt-4">
+                        함께 웃고 울며 쌓아온 소중한 시간들.<br>앞으로도 평생 함께할 우리를 위해.
+                    </p>
+</div>
+<div class="mt-12">
+<button class="group relative px-8 py-4 bg-gradient-to-r from-[#FFF0F5] to-[#FFB6C1] rounded-full text-primary font-label-sm shadow-lg hover:shadow-rose-200/50 transition-all duration-300 active:scale-95" onclick="createHeartBurst(event)">
+<span class="relative z-10 flex items-center gap-2">
+                            나의 마음 전하기
+                            <span class="material-symbols-outlined text-sm" data-icon="favorite" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+</span>
+</button>
+</div>
+</div>
+<a class="next-section-btn flex flex-col items-center gap-1 opacity-60 hover:opacity-100" href="#gallery">
+<span class="font-label-sm text-label-sm text-primary">Scroll Down</span>
+<span class="material-symbols-outlined text-3xl">keyboard_double_arrow_down</span>
+</a>
+</section>
+<!-- Memory Gallery Section -->
+<section class="py-section-gap px-margin-page max-w-7xl mx-auto" id="gallery">
+<div class="text-center mb-20 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<span class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm mb-4 italic">Memory Archives</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">우리의 소중한 기록들</h2>
+</div>
+<!-- 20-Slot Responsive Grid Gallery -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- 사진 1번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0ujBSNw_ahz_UbZYN6_NQrGkFm0ggmvbL0Wi9bk_trNaRlaKL9NkhnLsJcO3rsAb0tyrbmRSzI2lvSrTFZ6KpCP0E_3rmwBPerKT5N23b4zMazk14jSBRh1shcToALcdMYIn-hU5YZv-d92PetKTNJa-WtRp9Ze73HdIOK7MaNxslvYOkQ2T-9akRLwQ-i9BcW-G2KbB1N9bn7FOokZQrmrWvlpgMzaF35bNrBxctMm4YVi1jOBKNTsoaVKtr3HPHwu2BqRtBso27g">
+</div>
+</div>
+<!-- 사진 2번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrBcWYoqQA_F-jec1yp9oT38m3YJdMGV3N4Ttv8-Ub2mm-LFwGpIfqN-cWqESsZ2KF0zHdDWmWac_zHY9BdUdiAPXQRQ2MloW1EEe6jWF4dw3xdOORFJUZ0mMae61nx--6-d-KGHrLW2r95WMmj6kfE_JLPi5zXL4wthwd-s6yws_VyNDEetbnM0liIzF5k5safDaXpka_EYlfwuAzALHNx4_AI6qyjs5gyS6r6mxtza7q27EnRbyspqoRpa0g49m_KZ7lk7lCjK0">
+</div>
+</div>
+<!-- 사진 3번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOMQKBXbnSFhofBmA1RJ0_Rv5isU5K9vv7xeDDRCs-SHLe9rZVE6ibN6GhrcXKtv_U8xIiBKyZaFmufLz8Th24uxfhnMzv1Byzdyl4-wQ9_ZALinyUuL1BtuxD9QbpCjgCJgg2GkBMoPOg-5M0-9qn3r97O4h9FkgfYzfm--dz59bL0xukepQa5O0tI1IgSfJSLsmaV7N8vUOW6xc7XFbiap9ii9fDTVLuwieQL_6bpAQCMr79LhkF4uuXJmA5lZ4pa-BfqqFrlQ">
+</div>
+</div>
+<!-- 사진 4번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAafZINKPjgKm2J4Ta7tNMRE-2TsgENui5G8etLjw2Jy_qOxOgLCC-eTYwJKp9SckQFsqoLdnsjaqVYgiS0uHKbtREo-qqx28ImsG_momRnuldnVmf7DXAmvBEZsfUZ7PQvof_7JvZPf21jP0YPUhiDOIaUbz7f2lUKEYaLUBAIU1u7BMZ6PQ9wZWCNSvIwH3XHgDyv6JblxVwmHY3enYDd5JBN9bb9cpQCondHt2QQd8OasR7Up7_xhAO6OeV3lJ3J9RmpNfGcBSg">
+</div>
+</div>
+<!-- 사진 5번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtyXspZqrg6dM__aAR4XXWbFU2jt8NXE9zm9vbjUa4XOIagmaS2e9wnvS9AQ57bWBBtqjrMfT91uWyU7TMt4l2E3iQMzAfBmWwJLKN7kYiELkCDuZgi4YJY-V6tOu5NET6x9cZhCy7_xZCJfH7P8RkczS1KqHSjR37M9T8tpvXRLzpDYMRclk488Yl7asQTXN7CWeGZ6iMLCgV9LapABrvs1U0bN_sT2EJ9TU1ejaClY0PoMpHsmdB1hjYWZBOjd_SKBfxPwERntE">
+</div>
+</div>
+<!-- 사진 6번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN3NdWhl4umFR0_cmvZdh6dVZREn9eZAadLYuaUaiGAhfmY-B-6e-sb8VM_s3bRbIfsMXsXytU5I5iPF7k_tMRgEh3uhxeRXZKkkCvzNA3sOHsX1iNovCbfNgWl6tD188vRbsVprQI3-lQgiTRpy2TuyGvYixlbMT_frHcS7OjNxwMuUrguEquRZJCy2Pc4xnBuaYHjJlv2PNM5W6JORoWcyo2Uj3qkHnDFCZQEQjueMe880-GwdgFtJ8yoD6vLMHE5H8BSP-vatg">
+</div>
+</div>
+<!-- 사진 7번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 7" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEh6MmxvPRQIMrjNZan81ENbsP7Oy-ObhNUVy-vlqTxOLBi-qIxXafQ-iQKG8HOrRAx4uMlZ-uT73MBvc88kLGYn1F3yIJPsBYCzHh1tArHQM6jXPSrouiE06RSRN-Hkw7TwwUz2LEIhnY5iTDp9m5rbVw6v9cbugFqDsFdEnHNmBZXes0eXmnOhL4vrk98T4yNxDESfhtBb_R1CWX7vpIcvFHvurDCLPqOK8Z8nYjHCC5AGB4xYW2OD7Soc-92FaawXqSGw2bGzI">
+</div>
+</div>
+<!-- 사진 8번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 8" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf6Sqgf7IYXjTi41jGRIZ01D-E-zuGmlrikqdOWIiObuyfSVltYF1enuzWaeIOpMpGMkXA5vsxiudIEXH2qEm5xVQxlPGg7rGk3GnNPKr0qgZC5U9vgjEuHRLTd1cTEewLlzC4Dd2gwylzxVo9RqdH04nMfsVN22sRrDYKIjVh_GDDktt0g7GqPklgUHa_pm2x8JKKTepPXQs2e78bk_XHrvq_bFd7jI40juVY3ej3x1htTPqlxeF655jXUP8p_aIlOT2kVmXCw84">
+</div>
+</div>
+<!-- 사진 9번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 9" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb9QEIpqODV6QkXOyt-6umQh6KxVwmfyT1AZFrxaTepo1IxmD3fDeF4OUN9GZ3_UsfD__rFCx3Ash7fS0hKBR0nfAHrSqqkL2gMQS-0xrqBASzFAqHYIqI5tHwwb8KFPMfvmYQfvRmx1I7dClU6GYeLZOfTJbEDCu4xhtzJLRF0UTR-P3fz1aUcucMDFt1axHeTcc4xOM2EzJobzn4__mQEdNEnivHpe4paETmORX7tLOzAf-5_PTuRKyhNbNBFf5OsjRp_NRAsUM">
+</div>
+</div>
+<!-- 사진 10번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 10" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5LxcBuqkt1XgvQp0AQrqiEr_RwgPX4CxthTg6R19uoBFaiENuWOABCBCciKtQiKtNrsp-Ra4DRZR4TFjZt2eHlOv8FQGewxAR8r7aEvXpSDWQTYl5nUN_qTXsNaB1EQEm-zWwIF6jBFj7TyikxtjaVDzapZX9RNIQU7GsgUB5COzz3JaN0gy2_Mapnj_W69NyLHDAbQbFqoWoQt722q0dNevV3mddYxgQMJNUgAjl51SMf3lbpi2BouG4XN5aIiqKzOpScMYE0rc">
+</div>
+</div>
+<!-- 사진 11번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 11" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA2axftMRw4DMmiBMJpHmd3mrL9EsGJlMTJ-5Jymn7p7z-7qg67poykoKpr1zDO0g5grKc1OZy8y_W4Olh7VqzCXANtkZPXhdBnwlH9DnkuHqqhKzMra87jveLJuHdLxzPEaIvPhidE1MSEsflsp371ElqKZkEOqVfZyvcDpOeB57xKEV6mCsl0nC4WEC2ZnwXZaupDts3WLu64PWJP4_lCq_9iI0BLQ7zLRDocArqvHYrlCzk20u1BGua56TlBqtOLzMHKN2-g_A">
+</div>
+</div>
+<!-- 사진 12번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 12" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnao6TylQeni0m-ueS7uTSXjMfNMiX7SGeFWHMU4b1sRpQaG6-Sgf-ugC-XaqeV7QpNlxftwZOg71gKgVm6mlfL_LMzd2MO8mtSk1L9T9KWU7Ij8Yo2W0haKb3hi97Gl2XxydwpmTyG5mJ0mLv0bYXjhVGoFE-nc7WtglocTFstoFR-ehIzG8z62i5nUVZXYxhwx-ltputC0jmiHwNCtwWUcuqjIXBHgZMwFLuHwbwL_F7VOLy_xYarR6wVBF66oL3v-pm9I7uMeA">
+</div>
+</div>
+<!-- 사진 13번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 13" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZjDhiJyAKyDUAQhD-bmQt-IRbFL1FXzuEUqqWe--tCfh8IYd4Z947HY4yRgN_bHSa91kwng39ObjlvJBEv21vxw07l6pgtA13uFosfkDOpnGDJhOTcXgBbkkrc-DLk8NHMWtTXItPgiTSmTu3erYU3CO9i4Gy8oyRUo3GmAZHeB7jbmyDafiKzdyCne0aidlgV6z4HKIpvNcohcSG5x4MEyL-dDJpgRjfj-Wj5rTxMtISaHS2qhgJH-JTViEZ9gIufR6voFv6jM">
+</div>
+</div>
+<!-- 사진 14번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 14" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB49dbvMtl3a5cj41ANiPwzZylFZZB7xmEzPWQju1lbqPrZ1iFu9nGmQSXbYgkeOKXWKk_gMOOgB3p7vBln7YYzvH3nc4aVYksStJ_I2hNLI7bHVmM5tDr8i1QMDGQfiyp5UuRZfPc7LEKTgONDjd_R-T5DnFl-y_wXGjGW0BtEn3BeXipHT2HPBCDIx9M-9yLHlFJrk-S_-gPnXRf8Udusbucna3A9UBg6tAdLazwB2u_PI2RLtN-posZdYJc8HEwcbF8nqNGmwA4">
+</div>
+</div>
+<!-- 사진 15번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 15" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd3eDjvASVDKdyrOS4u6aMuGaBoekTBBM0hCuQJ89N-_zqvt5LmuNkaS7RBLSCJpPMbHqOQCDHqOCHvNZPwuE3noEo4Evp3ArdFxz0geStGE_ohh6nzdbUZnDWvCw-IwOF2NtkOjm11kKYLHWuyCqjhCK7cpX5xCI0PKQSzMeouGyBh6U6TepuIm9cbGwG3dMfdAhIFbkI8n8hRH9FjkAIque3jf9ZWeKtlE2IaBhD--NZbf5UgSvGMi7OvZeoxPS2Ck2MEkFfBtg">
+</div>
+</div>
+<!-- 사진 16번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 16" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0dSvIUS8cgBT4zMAjwLvj6Vaf79Rc9g1QP-DUPuVNVCBYPIcP2qaacKg0xG5UpdMmEyHFwmw8VyR37m0wsKm_0-hrvxOW6O72Eqd5YFcM-wV_flQkVc4ZW3dWHnLBO355sqCcXR0JUGHo-jkS3kHiUjLKkggfh0rBhqc4-ql6OH4LpRAJrg0FeJFo_G0CqwS9acxmj1XJ9WP282Hp9kQer7QFP_Vx6Uwuzko5ypCO_ldVoO_IFjY4Qc7jSPfWSNEkptwXbVBq__M">
+</div>
+</div>
+<!-- 사진 17번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 17" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdL9EMkwHDFSHijGxFeuUnKsnOm-b3Ju03XEDzndV1LqzNN4MpgCm8FcjVNNK7caPJnHiLzaxay7P9gAIDQKoyhQTXyLv48X44KfhpozvmhtnRBMbedwf4MIj0RtkwzcmwbM--x3IrSvmpClt64XAmcwqM4ujkDQGf2fYZIJHCQjaLvZ27m3i5H45JqxU7blvwEG0Z_AzpuQw9ZCpBBj0BVl42a0_6rrZ6F7vXyBD-fl62lRRCPrXRPGsqZb4RcMjCuuDGsrOqsvc">
+</div>
+</div>
+<!-- 사진 18번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 18" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4b77Igcsxa2R2_8iWv6_3_agokV_3I8jJu4f02XtQq--GSFBc_AM_i-9byQzmecbQ2MFh6On7tRfnhbOVNGPYy8N13mbJ2WVzTnIA5Afhl69_Tu5B7qoKMVDd_qE_qAA6Yk5aDOkrfb4jpWvQhYqQKIIJYMhd6FjV9dUE0r2ehGo5npVFHEgQiBze32oubF_P4gfVeCTZMPcdTb_cTTDRnpdhugsIxq4pfhOkpcm7DQEMLi9hHBMrNtAFbIMgUdAZKdNHIy63kXY">
+</div>
+</div>
+<!-- 사진 19번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 19" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXEn_Bacrfz-q9t5jQ-J7uObquC5tXNJNvRfkzYKWUoUQqgVt1WPJ8ZSyAFYLOI309S7ivggGaFuYq87a5RNZshWjcIkZBW4f4dqNxg2yqCUHDyZk4PhtBxLobdNCet7xrabjLoHMkQdWyHSjV9jRJypzHqb-Fz0BZ7qhsUrX5QfvM6MBG3oU_lbt1_0CHOyekOMMro-EQFEepz_y_N3RQveCIohG5RPZdCY0HHl6N-bDRMFUmCS_AoOWF5c6ZbUKcIm_86tzmyG0">
+</div>
+</div>
+<!-- 사진 20번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 20" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8r0xFUlOQtwb3GcE1ACn91UibnF0guDIFpPqJFhhdWrkA2sd60msX3Onwf3Jr1fwuKOLPFgf9ly4xVEWjaQmyYosukhGhmRj27fLmSMDKXOGQ6E6sTvadjVDonqjvZmgzdehIBfgwt0MvvrckuhEfdY3_NTaVnDuqUnf7-kT4bFsFG5TABIOgu1hxML1aB00U-6sJAj4U2bIzyTUUiRRGCXy7Ae_0eo2oZTGrSkxVCXwabJ9aE8w1TGd20JsWqJBbnalv1yi0lZk">
+</div>
+</div>
+<!-- 사진 21번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 21" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFx4ftq23cDPpAIviZy2I-NgOk4qR6ZzAw2hw_Sdehsjlc7KSrl6iuPg-g5b2lcrezlK-Qg8UsZW9Ui9kbGs7xhxtRSalzYFpD32xsUuHAFK74kWhdSvBsoidkCM52lI6ijPxeIvVEhE1a17XxGODm2_H9aSbxIeQzQMfKasY0gUQIXMwHvx7g1_Jawma2rEqF7AHuM9wUEAevRMFwZQwQOlw365GgDCiCJn0GYQhr22MnAi04ZPWEOk-Q7z3hsdN1ybB-wJWSVFw">
+</div>
+</div>
+<!-- 사진 22번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 22" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrBcWYoqQA_F-jec1yp9oT38m3YJdMGV3N4Ttv8-Ub2mm-LFwGpIfqN-cWqESsZ2KF0zHdDWmWac_zHY9BdUdiAPXQRQ2MloW1EEe6jWF4dw3xdOORFJUZ0mMae61nx--6-d-KGHrLW2r95WMmj6kfE_JLPi5zXL4wthwd-s6yws_VyNDEetbnM0liIzF5k5safDaXpka_EYlfwuAzALHNx4_AI6qyjs5gyS6r6mxtza7q27EnRbyspqoRpa0g49m_KZ7lk7lCjK0">
+</div>
+</div>
+<!-- 사진 23번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 23" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOMQKBXbnSFhofBmA1RJ0_Rv5isU5K9vv7xeDDRCs-SHLe9rZVE6ibN6GhrcXKtv_U8xIiBKyZaFmufLz8Th24uxfhnMzv1Byzdyl4-wQ9_ZALinyUuL1BtuxD9QbpCjgCJgg2GkBMoPOg-5M0-9qn3r97O4h9FkgfYzfm--dz59bL0xukepQa5O0tI1IgSfJSLsmaV7N8vUOW6xc7XFbiap9ii9fDTVLuwieQL_6bpAQCMr79LhkF4uuXJmA5lZ4pa-BfqqFrlQ">
+</div>
+</div>
+<!-- 사진 24번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 24" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAafZINKPjgKm2J4Ta7tNMRE-2TsgENui5G8etLjw2Jy_qOxOgLCC-eTYwJKp9SckQFsqoLdnsjaqVYgiS0uHKbtREo-qqx28ImsG_momRnuldnVmf7DXAmvBEZsfUZ7PQvof_7JvZPf21jP0YPUhiDOIaUbz7f2lUKEYaLUBAIU1u7BMZ6PQ9wZWCNSvIwH3XHgDyv6JblxVwmHY3enYDd5JBN9bb9cpQCondHt2QQd8OasR7Up7_xhAO6OeV3lJ3J9RmpNfGcBSg">
+</div>
+</div>
+<!-- 사진 25번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 25" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtyXspZqrg6dM__aAR4XXWbFU2jt8NXE9zm9vbjUa4XOIagmaS2e9wnvS9AQ57bWBBtqjrMfT91uWyU7TMt4l2E3iQMzAfBmWwJLKN7kYiELkCDuZgi4YJY-V6tOu5NET6x9cZhCy7_xZCJfH7P8RkczS1KqHSjR37M9T8tpvXRLzpDYMRclk488Yl7asQTXN7CWeGZ6iMLCgV9LapABrvs1U0bN_sT2EJ9TU1ejaClY0PoMpHsmdB1hjYWZBOjd_SKBfxPwERntE">
+</div>
+</div>
+<!-- 사진 26번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 26" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN3NdWhl4umFR0_cmvZdh6dVZREn9eZAadLYuaUaiGAhfmY-B-6e-sb8VM_s3bRbIfsMXsXytU5I5iPF7k_tMRgEh3uhxeRXZKkkCvzNA3sOHsX1iNovCbfNgWl6tD188vRbsVprQI3-lQgiTRpy2TuyGvYixlbMT_frHcS7OjNxwMuUrguEquRZJCy2Pc4xnBuaYHjJlv2PNM5W6JORoWcyo2Uj3qkHnDFCZQEQjueMe880-GwdgFtJ8yoD6vLMHE5H8BSP-vatg">
+</div>
+</div>
+<!-- 사진 27번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 27" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEh6MmxvPRQIMrjNZan81ENbsP7Oy-ObhNUVy-vlqTxOLBi-qIxXafQ-iQKG8HOrRAx4uMlZ-uT73MBvc88kLGYn1F3yIJPsBYCzHh1tArHQM6jXPSrouiE06RSRN-Hkw7TwwUz2LEIhnY5iTDp9m5rbVw6v9cbugFqDsFdEnHNmBZXes0eXmnOhL4vrk98T4yNxDESfhtBb_R1CWX7vpIcvFHvurDCLPqOK8Z8nYjHCC5AGB4xYW2OD7Soc-92FaawXqSGw2bGzI">
+</div>
+</div>
+<!-- 사진 28번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 28" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf6Sqgf7IYXjTi41jGRIZ01D-E-zuGmlrikqdOWIiObuyfSVltYF1enuzWaeIOpMpGMkXA5vsxiudIEXH2qEm5xVQxlPGg7rGk3GnNPKr0qgZC5U9vgjEuHRLTd1cTEewLlzC4Dd2gwylzxVo9RqdH04nMfsVN22sRrDYKIjVh_GDDktt0g7GqPklgUHa_pm2x8JKKTepPXQs2e78bk_XHrvq_bFd7jI40juVY3ej3x1htTPqlxeF655jXUP8p_aIlOT2kVmXCw84">
+</div>
+</div>
+<!-- 사진 29번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 29" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb9QEIpqODV6QkXOyt-6umQh6KxVwmfyT1AZFrxaTepo1IxmD3fDeF4OUN9GZ3_UsfD__rFCx3Ash7fS0hKBR0nfAHrSqqkL2gMQS-0xrqBASzFAqHYIqI5tHwwb8KFPMfvmYQfvRmx1I7dClU6GYeLZOfTJbEDCu4xhtzJLRF0UTR-P3fz1aUcucMDFt1axHeTcc4xOM2EzJobzn4__mQEdNEnivHpe4paETmORX7tLOzAf-5_PTuRKyhNbNBFf5OsjRp_NRAsUM">
+</div>
+</div>
+<!-- 사진 30번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 30" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5LxcBuqkt1XgvQp0AQrqiEr_RwgPX4CxthTg6R19uoBFaiENuWOABCBCciKtQiKtNrsp-Ra4DRZR4TFjZt2eHlOv8FQGewxAR8r7aEvXpSDWQTYl5nUN_qTXsNaB1EQEm-zWwIF6jBFj7TyikxtjaVDzapZX9RNIQU7GsgUB5COzz3JaN0gy2_Mapnj_W69NyLHDAbQbFqoWoQt722q0dNevV3mddYxgQMJNUgAjl51SMf3lbpi2BouG4XN5aIiqKzOpScMYE0rc">
+</div>
+</div>
+<!-- 사진 31번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 31" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFx4ftq23cDPpAIviZy2I-NgOk4qR6ZzAw2hw_Sdehsjlc7KSrl6iuPg-g5b2lcrezlK-Qg8UsZW9Ui9kbGs7xhxtRSalzYFpD32xsUuHAFK74kWhdSvBsoidkCM52lI6ijPxeIvVEhE1a17XxGODm2_H9aSbxIeQzQMfKasY0gUQIXMwHvx7g1_Jawma2rEqF7AHuM9wUEAevRMFwZQwQOlw365GgDCiCJn0GYQhr22MnAi04ZPWEOk-Q7z3hsdN1ybB-wJWSVFw">
+</div>
+</div>
+<!-- 사진 32번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 32" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrBcWYoqQA_F-jec1yp9oT38m3YJdMGV3N4Ttv8-Ub2mm-LFwGpIfqN-cWqESsZ2KF0zHdDWmWac_zHY9BdUdiAPXQRQ2MloW1EEe6jWF4dw3xdOORFJUZ0mMae61nx--6-d-KGHrLW2r95WMmj6kfE_JLPi5zXL4wthwd-s6yws_VyNDEetbnM0liIzF5k5safDaXpka_EYlfwuAzALHNx4_AI6qyjs5gyS6r6mxtza7q27EnRbyspqoRpa0g49m_KZ7lk7lCjK0">
+</div>
+</div>
+<!-- 사진 33번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 33" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOMQKBXbnSFhofBmA1RJ0_Rv5isU5K9vv7xeDDRCs-SHLe9rZVE6ibN6GhrcXKtv_U8xIiBKyZaFmufLz8Th24uxfhnMzv1Byzdyl4-wQ9_ZALinyUuL1BtuxD9QbpCjgCJgg2GkBMoPOg-5M0-9qn3r97O4h9FkgfYzfm--dz59bL0xukepQa5O0tI1IgSfJSLsmaV7N8vUOW6xc7XFbiap9ii9fDTVLuwieQL_6bpAQCMr79LhkF4uuXJmA5lZ4pa-BfqqFrlQ">
+</div>
+</div>
+<!-- 사진 34번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 34" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAafZINKPjgKm2J4Ta7tNMRE-2TsgENui5G8etLjw2Jy_qOxOgLCC-eTYwJKp9SckQFsqoLdnsjaqVYgiS0uHKbtREo-qqx28ImsG_momRnuldnVmf7DXAmvBEZsfUZ7PQvof_7JvZPf21jP0YPUhiDOIaUbz7f2lUKEYaLUBAIU1u7BMZ6PQ9wZWCNSvIwH3XHgDyv6JblxVwmHY3enYDd5JBN9bb9cpQCondHt2QQd8OasR7Up7_xhAO6OeV3lJ3J9RmpNfGcBSg">
+</div>
+</div>
+<!-- 사진 35번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 35" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtyXspZqrg6dM__aAR4XXWbFU2jt8NXE9zm9vbjUa4XOIagmaS2e9wnvS9AQ57bWBBtqjrMfT91uWyU7TMt4l2E3iQMzAfBmWwJLKN7kYiELkCDuZgi4YJY-V6tOu5NET6x9cZhCy7_xZCJfH7P8RkczS1KqHSjR37M9T8tpvXRLzpDYMRclk488Yl7asQTXN7CWeGZ6iMLCgV9LapABrvs1U0bN_sT2EJ9TU1ejaClY0PoMpHsmdB1hjYWZBOjd_SKBfxPwERntE">
+</div>
+</div>
+<!-- 사진 36번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 36" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN3NdWhl4umFR0_cmvZdh6dVZREn9eZAadLYuaUaiGAhfmY-B-6e-sb8VM_s3bRbIfsMXsXytU5I5iPF7k_tMRgEh3uhxeRXZKkkCvzNA3sOHsX1iNovCbfNgWl6tD188vRbsVprQI3-lQgiTRpy2TuyGvYixlbMT_frHcS7OjNxwMuUrguEquRZJCy2Pc4xnBuaYHjJlv2PNM5W6JORoWcyo2Uj3qkHnDFCZQEQjueMe880-GwdgFtJ8yoD6vLMHE5H8BSP-vatg">
+</div>
+</div>
+<!-- 사진 37번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 37" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEh6MmxvPRQIMrjNZan81ENbsP7Oy-ObhNUVy-vlqTxOLBi-qIxXafQ-iQKG8HOrRAx4uMlZ-uT73MBvc88kLGYn1F3yIJPsBYCzHh1tArHQM6jXPSrouiE06RSRN-Hkw7TwwUz2LEIhnY5iTDp9m5rbVw6v9cbugFqDsFdEnHNmBZXes0eXmnOhL4vrk98T4yNxDESfhtBb_R1CWX7vpIcvFHvurDCLPqOK8Z8nYjHCC5AGB4xYW2OD7Soc-92FaawXqSGw2bGzI">
+</div>
+</div>
+<!-- 사진 38번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 38" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf6Sqgf7IYXjTi41jGRIZ01D-E-zuGmlrikqdOWIiObuyfSVltYF1enuzWaeIOpMpGMkXA5vsxiudIEXH2qEm5xVQxlPGg7rGk3GnNPKr0qgZC5U9vgjEuHRLTd1cTEewLlzC4Dd2gwylzxVo9RqdH04nMfsVN22sRrDYKIjVh_GDDktt0g7GqPklgUHa_pm2x8JKKTepPXQs2e78bk_XHrvq_bFd7jI40juVY3ej3x1htTPqlxeF655jXUP8p_aIlOT2kVmXCw84">
+</div>
+</div>
+<!-- 사진 39번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 39" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb9QEIpqODV6QkXOyt-6umQh6KxVwmfyT1AZFrxaTepo1IxmD3fDeF4OUN9GZ3_UsfD__rFCx3Ash7fS0hKBR0nfAHrSqqkL2gMQS-0xrqBASzFAqHYIqI5tHwwb8KFPMfvmYQfvRmx1I7dClU6GYeLZOfTJbEDCu4xhtzJLRF0UTR-P3fz1aUcucMDFt1axHeTcc4xOM2EzJobzn4__mQEdNEnivHpe4paETmORX7tLOzAf-5_PTuRKyhNbNBFf5OsjRp_NRAsUM">
+</div>
+</div>
+<!-- 사진 40번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 40" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5LxcBuqkt1XgvQp0AQrqiEr_RwgPX4CxthTg6R19uoBFaiENuWOABCBCciKtQiKtNrsp-Ra4DRZR4TFjZt2eHlOv8FQGewxAR8r7aEvXpSDWQTYl5nUN_qTXsNaB1EQEm-zWwIF6jBFj7TyikxtjaVDzapZX9RNIQU7GsgUB5COzz3JaN0gy2_Mapnj_W69NyLHDAbQbFqoWoQt722q0dNevV3mddYxgQMJNUgAjl51SMf3lbpi2BouG4XN5aIiqKzOpScMYE0rc">
+</div>
+</div>
+<!-- 사진 41번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 41" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFx4ftq23cDPpAIviZy2I-NgOk4qR6ZzAw2hw_Sdehsjlc7KSrl6iuPg-g5b2lcrezlK-Qg8UsZW9Ui9kbGs7xhxtRSalzYFpD32xsUuHAFK74kWhdSvBsoidkCM52lI6ijPxeIvVEhE1a17XxGODm2_H9aSbxIeQzQMfKasY0gUQIXMwHvx7g1_Jawma2rEqF7AHuM9wUEAevRMFwZQwQOlw365GgDCiCJn0GYQhr22MnAi04ZPWEOk-Q7z3hsdN1ybB-wJWSVFw">
+</div>
+</div>
+<!-- 사진 42번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 42" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrBcWYoqQA_F-jec1yp9oT38m3YJdMGV3N4Ttv8-Ub2mm-LFwGpIfqN-cWqESsZ2KF0zHdDWmWac_zHY9BdUdiAPXQRQ2MloW1EEe6jWF4dw3xdOORFJUZ0mMae61nx--6-d-KGHrLW2r95WMmj6kfE_JLPi5zXL4wthwd-s6yws_VyNDEetbnM0liIzF5k5safDaXpka_EYlfwuAzALHNx4_AI6qyjs5gyS6r6mxtza7q27EnRbyspqoRpa0g49m_KZ7lk7lCjK0">
+</div>
+</div>
+<!-- 사진 43번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 43" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOMQKBXbnSFhofBmA1RJ0_Rv5isU5K9vv7xeDDRCs-SHLe9rZVE6ibN6GhrcXKtv_U8xIiBKyZaFmufLz8Th24uxfhnMzv1Byzdyl4-wQ9_ZALinyUuL1BtuxD9QbpCjgCJgg2GkBMoPOg-5M0-9qn3r97O4h9FkgfYzfm--dz59bL0xukepQa5O0tI1IgSfJSLsmaV7N8vUOW6xc7XFbiap9ii9fDTVLuwieQL_6bpAQCMr79LhkF4uuXJmA5lZ4pa-BfqqFrlQ">
+</div>
+</div>
+<!-- 사진 44번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 44" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAafZINKPjgKm2J4Ta7tNMRE-2TsgENui5G8etLjw2Jy_qOxOgLCC-eTYwJKp9SckQFsqoLdnsjaqVYgiS0uHKbtREo-qqx28ImsG_momRnuldnVmf7DXAmvBEZsfUZ7PQvof_7JvZPf21jP0YPUhiDOIaUbz7f2lUKEYaLUBAIU1u7BMZ6PQ9wZWCNSvIwH3XHgDyv6JblxVwmHY3enYDd5JBN9bb9cpQCondHt2QQd8OasR7Up7_xhAO6OeV3lJ3J9RmpNfGcBSg">
+</div>
+</div>
+<!-- 사진 45번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 45" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtyXspZqrg6dM__aAR4XXWbFU2jt8NXE9zm9vbjUa4XOIagmaS2e9wnvS9AQ57bWBBtqjrMfT91uWyU7TMt4l2E3iQMzAfBmWwJLKN7kYiELkCDuZgi4YJY-V6tOu5NET6x9cZhCy7_xZCJfH7P8RkczS1KqHSjR37M9T8tpvXRLzpDYMRclk488Yl7asQTXN7CWeGZ6iMLCgV9LapABrvs1U0bN_sT2EJ9TU1ejaClY0PoMpHsmdB1hjYWZBOjd_SKBfxPwERntE">
+</div>
+</div>
+<!-- 사진 46번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 46" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN3NdWhl4umFR0_cmvZdh6dVZREn9eZAadLYuaUaiGAhfmY-B-6e-sb8VM_s3bRbIfsMXsXytU5I5iPF7k_tMRgEh3uhxeRXZKkkCvzNA3sOHsX1iNovCbfNgWl6tD188vRbsVprQI3-lQgiTRpy2TuyGvYixlbMT_frHcS7OjNxwMuUrguEquRZJCy2Pc4xnBuaYHjJlv2PNM5W6JORoWcyo2Uj3qkHnDFCZQEQjueMe880-GwdgFtJ8yoD6vLMHE5H8BSP-vatg">
+</div>
+</div>
+<!-- 사진 47번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 47" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEh6MmxvPRQIMrjNZan81ENbsP7Oy-ObhNUVy-vlqTxOLBi-qIxXafQ-iQKG8HOrRAx4uMlZ-uT73MBvc88kLGYn1F3yIJPsBYCzHh1tArHQM6jXPSrouiE06RSRN-Hkw7TwwUz2LEIhnY5iTDp9m5rbVw6v9cbugFqDsFdEnHNmBZXes0eXmnOhL4vrk98T4yNxDESfhtBb_R1CWX7vpIcvFHvurDCLPqOK8Z8nYjHCC5AGB4xYW2OD7Soc-92FaawXqSGw2bGzI">
+</div>
+</div>
+<!-- 사진 48번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 48" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf6Sqgf7IYXjTi41jGRIZ01D-E-zuGmlrikqdOWIiObuyfSVltYF1enuzWaeIOpMpGMkXA5vsxiudIEXH2qEm5xVQxlPGg7rGk3GnNPKr0qgZC5U9vgjEuHRLTd1cTEewLlzC4Dd2gwylzxVo9RqdH04nMfsVN22sRrDYKIjVh_GDDktt0g7GqPklgUHa_pm2x8JKKTepPXQs2e78bk_XHrvq_bFd7jI40juVY3ej3x1htTPqlxeF655jXUP8p_aIlOT2kVmXCw84">
+</div>
+</div>
+<!-- 사진 49번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 49" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb9QEIpqODV6QkXOyt-6umQh6KxVwmfyT1AZFrxaTepo1IxmD3fDeF4OUN9GZ3_UsfD__rFCx3Ash7fS0hKBR0nfAHrSqqkL2gMQS-0xrqBASzFAqHYIqI5tHwwb8KFPMfvmYQfvRmx1I7dClU6GYeLZOfTJbEDCu4xhtzJLRF0UTR-P3fz1aUcucMDFt1axHeTcc4xOM2EzJobzn4__mQEdNEnivHpe4paETmORX7tLOzAf-5_PTuRKyhNbNBFf5OsjRp_NRAsUM">
+</div>
+</div>
+<!-- 사진 50번 주소 -->
+<div class="group bg-white p-3 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-500 reveal gallery-extra hidden">
+<div class="relative overflow-hidden rounded-xl aspect-square">
+<img alt="추억 사진 50" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5LxcBuqkt1XgvQp0AQrqiEr_RwgPX4CxthTg6R19uoBFaiENuWOABCBCciKtQiKtNrsp-Ra4DRZR4TFjZt2eHlOv8FQGewxAR8r7aEvXpSDWQTYl5nUN_qTXsNaB1EQEm-zWwIF6jBFj7TyikxtjaVDzapZX9RNIQU7GsgUB5COzz3JaN0gy2_Mapnj_W69NyLHDAbQbFqoWoQt722q0dNevV3mddYxgQMJNUgAjl51SMf3lbpi2BouG4XN5aIiqKzOpScMYE0rc">
+</div>
+</div></div>
+<div class="mt-16 text-center"><button class="px-10 py-4 border-2 border-primary-fixed text-primary rounded-full font-label-sm hover:bg-primary-fixed hover:text-on-primary-fixed transition-all duration-300 font-serif italic" id="show-more-btn">
+    추억 더 보기
+</button>
+<button class="hidden px-10 py-4 border-2 border-primary-fixed text-primary rounded-full font-label-sm hover:bg-primary-fixed hover:text-on-primary-fixed transition-all duration-300 font-serif italic" id="show-less-btn">
+    접기 (20개만 보기)
+</button></div>
+<a class="next-section-btn opacity-60 hover:opacity-100" href="#letter">
+<span class="material-symbols-outlined text-4xl">expand_more</span>
+</a></section>
+<!-- Love Letter Section -->
+<section class="py-section-gap relative" id="letter">
+<div class="max-w-4xl mx-auto px-margin-page">
+<div class="bg-stationery p-12 md:p-24 rounded-[4rem] shadow-2xl border border-yellow-100/50 relative overflow-hidden group reveal active" id="letter-card-capture" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="absolute top-12 right-12 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg transform rotate-12 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="favorite" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+</div>
+<div class="relative z-10 space-y-12">
+<div class="text-center">
+<h3 class="font-headline-lg text-headline-lg text-primary italic mb-2">My Dearest...</h3>
+<div class="w-16 h-px bg-yellow-400 mx-auto"></div>
+</div>
+<div class="w-full space-y-6 text-center font-display-lg italic"><div class="bg-white/80 backdrop-blur-sm p-10 md:p-16 rounded-[2rem] shadow-sm border border-rose-100/50 relative overflow-hidden">
+<div %3e%3c="" %3e%3cfeturbulence="" %3e%3cfilter="" 0="" 200="" 200"="" basefrequency="0.65" class="absolute inset-0 opacity-10 pointer-events-none" filter="url(%23noiseFilter)" filter%3e%3crect="" height="100%25" id="noiseFilter" numoctaves="3" stitchtiles="stitch" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox=&quot;);" svg%3e');"="" type="fractalNoise" width="100%25" xmlns="http://www.w3.org/2000/svg"></div>
+<p class="font-display-lg text-on-surface-variant leading-[3] text-xl md:text-2xl relative z-10">
+        혜리야 안녕? 너의 남자친구 세환이야ㅎㅎ 갑자기 이 홈페이지를 보고 놀랐을거야ㅎ.ㅎ 사실 내가 조금씩 너에게 200일에 보여주려고 만든 홈페이지인데, 너가 맘에 들어하면 좋겠어! 우리의 200일은 앞으로 만날 날에 비하면 이제 시작이라고 생각해❤️ 지금처럼 우리 잘 지내고, 오늘 이 편지를 쓰는 게 너가 기분이 좋지 않았던 날이었는데, 서로 자신의 의도와는 다르게 속상하게 할 수 있지만, 속상하게 했다면 미안하다고 말하고, 내 진심은 그래도 너를 향해있다는 것을 알아줬으면 좋겠어..!!<br></p>
+</div></div>
+<div class="pt-8 text-right space-y-2">
+<p class="font-body-lg text-body-lg text-primary italic">혜리의 단짝 친구</p>
+<p class="font-headline-md text-headline-md text-primary font-bold">세환이가</p>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="flex items-center gap-3 px-12 py-5 bg-primary text-on-primary rounded-full font-label-sm shadow-rose-200 shadow-xl hover:scale-105 active:scale-95 transition-all duration-300" onclick="saveLetterAsImage(event)">
+                        편지 저장하기
+                        <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<a class="next-section-btn opacity-60 hover:opacity-100" href="#interactive-cta">
+<span class="material-symbols-outlined text-4xl">expand_more</span>
+</a></section>
+<!-- Interactive CTA Section -->
+<section class="py-24 bg-primary-fixed/30 text-center" id="interactive-cta">
+<div class="max-w-2xl mx-auto px-margin-page reveal active" style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
+<span class="material-symbols-outlined text-6xl text-primary mb-6" data-icon="favorite">favorite</span>
+<h2 class="font-headline-lg text-headline-lg text-on-primary-fixed-variant mb-6">우리 함께할 내일이 더 기대돼요</h2>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant opacity-80 mb-10">
+                    어제보다 오늘 더, 오늘보다 내일 더 사랑할게. <br> 200일을 축하해, 나의 사랑.
+                </p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="px-8 py-3 bg-white text-primary rounded-full font-label-sm hover:shadow-lg transition-all active:scale-95" onclick="createHeartBurst(event)">나의 마음 전하기</button>
+<button class="px-8 py-3 border border-primary text-primary rounded-full font-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">우리의 약속 보기</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-yellow-100 bg-transparent">
+<div class="flex flex-col items-center justify-center gap-4 w-full text-center">
+<div class="flex gap-8 mb-4">
+<a class="text-rose-200 hover:text-yellow-500 transition-colors duration-300 font-serif text-sm italic" href="#">우리의 기록</a>
+<a class="text-rose-200 hover:text-yellow-500 transition-colors duration-300 font-serif text-sm italic" href="#">함께한 시간</a>
+</div>
+<p class="font-serif text-sm italic text-rose-300">© 2026 혜리를 위한 홈페이지</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-rose-200" data-icon="favorite" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+<span class="material-symbols-outlined text-rose-200" data-icon="auto_stories" style="font-variation-settings: &quot;FILL&quot; 1;">auto_stories</span>
+</div>
+</div>
+</footer>
+<script>
+  (function() {
+    const startDate = new Date('2025-10-23');
+    const today = new Date();
+    // Reset time parts to ensure calculation is based on days
+    startDate.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);
+    
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+    
+    const counterElement = document.getElementById('d-day-counter');
+    if (counterElement) {
+      counterElement.textContent = diffDays;
+    }
+  })();
+</script><script>
+    // Scroll Reveal Logic
+    const revealElements = () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
         }, { threshold: 0.1 });
+
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    };
 
-        // 3. 하트 입자 효과 (버튼 클릭용)
-        function createHeartBurst(event) {
-            const centerX = event.clientX;
-            const centerY = event.clientY;
-            for (let i = 0; i < 12; i++) {
-                const heart = document.createElement('span');
-                heart.className = 'material-symbols-outlined heart-particle text-rose-400';
-                heart.textContent = 'favorite';
-                heart.style.fontVariationSettings = "'FILL' 1";
-                const angle = (i / 12) * Math.PI * 2;
-                const velocity = 50 + Math.random() * 100;
-                heart.style.setProperty('--tw-tx', `${Math.cos(angle) * velocity}px`);
-                heart.style.setProperty('--tw-ty', `${Math.sin(angle) * velocity - 50}px`);
-                heart.style.setProperty('--tw-scale', 0.5 + Math.random());
-                heart.style.setProperty('--tw-rotation', `${Math.random() * 360}deg`);
-                heart.style.left = `${centerX}px`;
-                heart.style.top = `${centerY}px`;
-                document.body.appendChild(heart);
-                heart.addEventListener('animationend', () => heart.remove());
-            }
-        }
-
-        // 4. 마우스 하트 트레일
+    // Cursor Trail Logic
+    const cursorTrail = () => {
         document.addEventListener('mousemove', (e) => {
-            if (Math.random() > 0.1) return;
+            if (Math.random() > 0.2) return; // Limit frequency
             const heart = document.createElement('span');
             heart.className = 'material-symbols-outlined cursor-heart';
             heart.textContent = 'favorite';
             heart.style.left = e.clientX + 'px';
             heart.style.top = e.clientY + 'px';
+            heart.style.fontVariationSettings = "'FILL' 1";
             document.body.appendChild(heart);
             setTimeout(() => heart.remove(), 1000);
         });
-    </script>
-</body>
-</html>
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        revealElements();
+        cursorTrail();
+    });
+</script>
+<span class="material-symbols-outlined cursor-heart" style="left: 870px; top: 140px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 1115px; top: 636px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 1132px; top: 668px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 1151px; top: 729px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 1151px; top: 767px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 1151px; top: 794px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><script>
+function createHeartBurst(event) {
+  const btn = event.currentTarget;
+  const rect = btn.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  
+  for (let i = 0; i < 12; i++) {
+    const heart = document.createElement('span');
+    heart.className = 'material-symbols-outlined heart-particle text-rose-400';
+    heart.textContent = 'favorite';
+    heart.style.fontVariationSettings = "'FILL' 1";
+    
+    const angle = (i / 12) * Math.PI * 2;
+    const velocity = 50 + Math.random() * 100;
+    const tx = Math.cos(angle) * velocity;
+    const ty = Math.sin(angle) * velocity - 50; // Bias upwards
+    const scale = 0.5 + Math.random();
+    const rotation = Math.random() * 360;
+    
+    heart.style.setProperty('--tw-tx', `${tx}px`);
+    heart.style.setProperty('--tw-ty', `${ty}px`);
+    heart.style.setProperty('--tw-scale', scale);
+    heart.style.setProperty('--tw-rotation', `${rotation}deg`);
+    
+    heart.style.left = `${centerX}px`;
+    heart.style.top = `${centerY}px`;
+    heart.style.fontSize = '24px';
+    
+    document.body.appendChild(heart);
+    
+    heart.addEventListener('animationend', () => heart.remove());
+  }
+}
+</script><script>
+function saveLetterAsImage() {
+    const letterElement = document.getElementById('letter-card-capture');
+    const saveBtn = event.currentTarget;
+    
+    // Feedback to user during processing
+    const originalContent = saveBtn.innerHTML;
+    saveBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> 처리 중...';
+    saveBtn.disabled = true;
+
+    html2canvas(letterElement, {
+        scale: 2, // High resolution
+        useCORS: true,
+        backgroundColor: null,
+        logging: false
+    }).then(canvas => {
+        const image = canvas.toDataURL('image/png', 1.0);
+        const link = document.createElement('a');
+        link.download = '우리의_소중한_기록_편지.png';
+        link.href = image;
+        link.click();
+        
+        // Reset button state
+        saveBtn.innerHTML = originalContent;
+        saveBtn.disabled = false;
+    }).catch(err => {
+        console.error('Error saving image:', err);
+        saveBtn.innerHTML = originalContent;
+        saveBtn.disabled = false;
+        alert('이미지 저장 중 오류가 발생했습니다.');
+    });
+}
+</script>
+<span class="material-symbols-outlined cursor-heart" style="left: 872px; top: 460px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><script>
+    (function() {
+        const showMoreBtn = document.getElementById('show-more-btn');
+        const showLessBtn = document.getElementById('show-less-btn');
+        const extraSlots = document.querySelectorAll('.gallery-extra');
+
+        if (showMoreBtn && showLessBtn) {
+            showMoreBtn.addEventListener('click', () => {
+                extraSlots.forEach(slot => {
+                    slot.classList.remove('hidden');
+                    // Trigger reveal if not already active
+                    setTimeout(() => slot.classList.add('active'), 50);
+                });
+                showMoreBtn.classList.add('hidden');
+                showLessBtn.classList.remove('hidden');
+            });
+
+            showLessBtn.addEventListener('click', () => {
+                extraSlots.forEach(slot => {
+                    slot.classList.add('hidden');
+                });
+                showMoreBtn.classList.remove('hidden');
+                showLessBtn.classList.add('hidden');
+                // Scroll back to gallery top for better UX
+                document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    })();
+</script><script>
+  (function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    const updateActiveLink = () => {
+      let currentSectionId = '';
+      const scrollPosition = window.scrollY + 100; // Offset for header height
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href').substring(1);
+        if (href === currentSectionId) {
+          link.classList.remove('text-rose-300/80');
+          link.classList.add('text-rose-500', 'border-b-2', 'border-yellow-400', 'font-semibold');
+        } else {
+          link.classList.add('text-rose-300/80');
+          link.classList.remove('text-rose-500', 'border-b-2', 'border-yellow-400', 'font-semibold');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateActiveLink);
+    // Initial call to set state on load
+    updateActiveLink();
+  })();
+</script>
+<span class="material-symbols-outlined cursor-heart" style="left: 157px; top: 20px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 173px; top: 19px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 242px; top: 15px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 295px; top: 15px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+<span class="material-symbols-outlined cursor-heart" style="left: 825px; top: 4583px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 821px; top: 4578px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+
+<span class="material-symbols-outlined cursor-heart" style="left: 572px; top: 1396px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 562px; top: 1434px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 567px; top: 1497px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 562px; top: 1497px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 553px; top: 1492px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 544px; top: 1488px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 523px; top: 1471px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 515px; top: 1460px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 537px; top: 1361px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span><span class="material-symbols-outlined cursor-heart" style="left: 624px; top: 820px; font-variation-settings: &quot;FILL&quot; 1;">favorite</span></body></html>
