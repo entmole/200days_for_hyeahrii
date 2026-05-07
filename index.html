@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth scroll-snap-y scroll-snap-mandatory" lang="ko">
+<html class="scroll-smooth" lang="ko">
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -10,7 +10,6 @@
 
     <script id="tailwind-config">
       tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
             "colors": {
@@ -18,113 +17,94 @@
                 "on-primary": "#ffffff",
                 "background": "#f9f9f9",
                 "surface": "#f9f9f9",
-                "on-surface": "#1a1c1c",
-                "primary-container": "#ffb6c1",
-                "on-primary-container": "#7b444e",
-                "secondary-container": "#fed65b",
-                "on-secondary-container": "#745c00",
-                "on-surface-variant": "#514345"
-            },
-            "fontFamily": {
-                "label-sm": ["Plus Jakarta Sans"],
-                "headline-lg": ["Noto Serif"],
-                "body-md": ["Plus Jakarta Sans"],
-                "body-lg": ["Plus Jakarta Sans"],
-                "display-lg": ["Noto Serif"],
-                "headline-md": ["Noto Serif"]
+                "on-surface": "#1a1c1c"
             }
-          },
-        },
+          }
+        }
       }
     </script>
 
     <style>
+        /* 스크롤 스냅 설정 */
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+        section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            min-height: 100vh;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        
+        /* 편지 배경 질감 */
         .bg-stationery {
             background-color: #ffffff;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
                 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
-        .floating-heart {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
-            50% { transform: translateY(-40px) rotate(10deg); opacity: 0.6; }
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .cursor-heart {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            color: #FFB6C1;
-            font-size: 14px;
-            animation: heartFadeOut 1s forwards;
-        }
-        @keyframes heartFadeOut {
-            0% { transform: translateY(0) scale(1); opacity: 0.8; }
-            100% { transform: translateY(-50px) scale(0.5); opacity: 0; }
-        }
-        html { scroll-snap-type: y mandatory; }
-        section, footer {
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
+
+        /* 메뉴 활성화 스타일 (핵심) */
+        .nav-link {
             position: relative;
+            transition: color 0.3s ease;
+            padding-bottom: 4px;
         }
+        .nav-link.active {
+            color: #f43f5e !important; /* rose-500 */
+            font-weight: 700;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #facc15; /* yellow-400 */
+        }
+
+        /* 하트 애니메이션 */
+        .floating-heart { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); opacity: 0.2; }
+            50% { transform: translateY(-40px); opacity: 0.6; }
+        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .cursor-heart { position: fixed; pointer-events: none; z-index: 9999; color: #FFB6C1; animation: heartFadeOut 1s forwards; }
+        @keyframes heartFadeOut { 0% { opacity: 0.8; } 100% { transform: translateY(-50px); opacity: 0; } }
         @keyframes heart-burst {
           0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
           100% { transform: translate(calc(-50% + var(--tw-tx)), calc(-50% + var(--tw-ty))) scale(var(--tw-scale)) rotate(var(--tw-rotation)); opacity: 0; }
         }
-        .heart-particle {
-          position: fixed;
-          pointer-events: none;
-          z-index: 100;
-          animation: heart-burst 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        }
-        
-        /* 메뉴 활성화 스타일 (수정된 부분) */
-        .nav-link {
-            transition: all 0.3s ease;
-        }
-        .nav-link.active {
-            color: #f43f5e; /* rose-500 */
-            font-weight: 600;
-            border-bottom: 2px solid #facc15; /* yellow-400 */
-        }
+        .heart-particle { position: fixed; pointer-events: none; z-index: 100; animation: heart-burst 1s forwards; }
     </style>
 </head>
 <body class="bg-background text-on-surface">
 
-<header class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-md border-b border-yellow-200/30">
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-pink-100">
     <nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-        <div class="text-2xl font-bold text-rose-400 italic font-headline-lg">혜리 ❤️ 세환의 스케치북</div>
-        <div class="hidden md:flex gap-8 items-center" id="nav-menu">
-            <a class="nav-link text-rose-300/80 hover:text-rose-500 py-1" href="#hero">우리의 순간</a>
-            <a class="nav-link text-rose-300/80 hover:text-rose-500 py-1" href="#gallery">추억 갤러리</a>
-            <a class="nav-link text-rose-300/80 hover:text-rose-500 py-1" href="#letter">나의 단짝 혜리에게</a>
+        <div class="text-2xl font-bold text-rose-400 italic">혜리 ❤️ 세환의 스케치북</div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="nav-link text-gray-400" href="#hero">우리의 순간</a>
+            <a class="nav-link text-gray-400" href="#gallery">추억 갤러리</a>
+            <a class="nav-link text-gray-400" href="#letter">나의 단짝 혜리에게</a>
         </div>
     </nav>
 </header>
 
 <main>
-    <section class="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden" id="hero">
+    <section class="relative flex flex-col items-center justify-center pt-20 overflow-hidden" id="hero">
         <div class="absolute inset-0 pointer-events-none">
             <span class="material-symbols-outlined absolute text-rose-200 floating-heart text-4xl" style="top: 20%; left: 10%;">favorite</span>
             <span class="material-symbols-outlined absolute text-rose-100 floating-heart text-5xl" style="top: 15%; left: 75%;">favorite</span>
         </div>
         <div class="relative z-10 text-center px-4">
-            <h1 class="font-display-lg text-6xl text-primary mb-8">우리가 만난 지</h1>
+            <h1 class="text-6xl text-primary mb-8 font-serif">우리가 만난 지</h1>
             <div class="inline-flex flex-col items-center gap-4 bg-white/40 backdrop-blur-xl p-12 rounded-[3rem] border border-white/60 shadow-xl">
                 <div class="text-sm text-gray-500 mb-2">Since 2025.10.23</div>
                 <div class="flex items-baseline gap-2">
@@ -141,10 +121,10 @@
         </div>
     </section>
 
-    <section class="py-20 px-8 max-w-7xl mx-auto" id="gallery">
-        <div class="text-center mb-20 reveal">
+    <section class="py-24 px-8 max-w-7xl mx-auto flex flex-col justify-center" id="gallery">
+        <div class="text-center mb-16 reveal">
             <span class="inline-block px-4 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-bold mb-4">Memory Archives</span>
-            <h2 class="text-4xl text-primary font-bold">우리의 소중한 기록들</h2>
+            <h2 class="text-4xl text-primary font-bold font-serif">우리의 소중한 기록들</h2>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="bg-white p-3 rounded-2xl shadow-sm border border-pink-50"><div class="aspect-square bg-gray-100 rounded-xl overflow-hidden"><img src="https://lh3.googleusercontent.com/aida/ADBb0ujBSNw_ahz_UbZYN6_NQrGkFm0ggmvbL0Wi9bk_trNaRlaKL9NkhnLsJcO3rsAb0tyrbmRSzI2lvSrTFZ6KpCP0E_3rmwBPerKT5N23b4zMazk14jSBRh1shcToALcdMYIn-hU5YZv-d92PetKTNJa-WtRp9Ze73HdIOK7MaNxslvYOkQ2T-9akRLwQ-i9BcW-G2KbB1N9bn7FOokZQrmrWvlpgMzaF35bNrBxctMm4YVi1jOBKNTsoaVKtr3HPHwu2BqRtBso27g" class="w-full h-full object-cover"></div></div>
@@ -154,18 +134,18 @@
         </div>
     </section>
 
-    <section class="py-20 relative" id="letter">
+    <section class="py-24 relative flex flex-col justify-center" id="letter">
         <div class="max-w-4xl mx-auto px-6">
-            <div class="bg-stationery p-12 md:p-24 rounded-[4rem] shadow-2xl border border-yellow-100/50 relative overflow-hidden group reveal" id="letter-card-capture">
-                <div class="absolute top-12 right-12 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg transform rotate-12">
+            <div class="bg-stationery p-10 md:p-20 rounded-[4rem] shadow-2xl border border-yellow-100/50 relative overflow-hidden reveal" id="letter-card-capture">
+                <div class="absolute top-12 right-12 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg">
                     <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
                 </div>
-                <div class="relative z-10 space-y-12">
+                <div class="relative z-10 space-y-10">
                     <div class="text-center">
                         <h3 class="text-3xl text-primary italic font-serif">My Dearest...</h3>
                         <div class="w-16 h-px bg-yellow-400 mx-auto mt-4"></div>
                     </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-10 rounded-[2rem] border border-rose-100/50">
+                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-[2rem] border border-rose-100/50">
                         <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif text-center">
                             혜리야 안녕? 너의 남자친구 세환이야ㅎㅎ 갑자기 이 홈페이지를 보고 놀랐을거야ㅎ.ㅎ 사실 내가 조금씩 너에게 200일에 보여주려고 만든 홈페이지인데, 너가 맘에 들어하면 좋겠어! 우리의 200일은 앞으로 만날 날에 비하면 이제 시작이라고 생각해❤️ 지금처럼 우리 잘 지내고, 오늘 이 편지를 쓰는 게 너가 기분이 좋지 않았던 날이었는데, 서로 자신의 의도와는 다르게 속상하게 할 수 있지만, 속상하게 했다면 미안하다고 말하고, 내 진심은 그래도 너를 향해있다는 것을 알아줬으면 좋겠어..!!
                         </p>
@@ -177,7 +157,7 @@
                 </div>
             </div>
             <div class="mt-12 flex justify-center">
-                <button class="px-12 py-5 bg-primary text-white rounded-full font-bold shadow-xl hover:scale-105 transition-all flex items-center gap-3" onclick="saveLetterAsImage(event)">
+                <button class="px-12 py-5 bg-primary text-white rounded-full font-bold shadow-xl flex items-center gap-3" onclick="saveLetterAsImage(event)">
                     편지 저장하기 <span class="material-symbols-outlined">send</span>
                 </button>
             </div>
@@ -190,46 +170,49 @@
 </footer>
 
 <script>
-    // 1. D-Day 계산
+    // 1. D-Day 계산 (기존과 동일)
     (function() {
         const startDate = new Date('2025-10-23');
         const today = new Date();
-        startDate.setHours(0,0,0,0);
-        today.setHours(0,0,0,0);
+        startDate.setHours(0,0,0,0); today.setHours(0,0,0,0);
         const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
         document.getElementById('d-day-counter').textContent = diffDays;
     })();
 
-    // 2. 스크롤 애니메이션 (Reveal)
-    const observer = new IntersectionObserver((entries) => {
+    // 2. 스크롤 위치 감지 및 메뉴 밑줄 업데이트 (새로운 방식)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // 화면의 50% 지점에 섹션이 들어오면 활성화된 것으로 간주
+    const navOptions = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    };
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, navOptions);
+
+    sections.forEach(section => navObserver.observe(section));
+
+    // 3. 등장 애니메이션 감지
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('active');
         });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // 3. 네비게이션 활성화 업데이트 (수정된 핵심 부분)
-    window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        let current = "";
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            // 현재 스크롤 위치가 섹션 중간쯤 왔을 때 해당 메뉴 활성화
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     // 4. 하트 버스트 효과
     function createHeartBurst(event) {
@@ -237,20 +220,17 @@
         const rect = btn.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
-        
         for (let i = 0; i < 12; i++) {
             const heart = document.createElement('span');
             heart.className = 'material-symbols-outlined heart-particle text-rose-400';
             heart.textContent = 'favorite';
             heart.style.fontVariationSettings = "'FILL' 1";
-            
             const angle = (i / 12) * Math.PI * 2;
             const velocity = 50 + Math.random() * 100;
             heart.style.setProperty('--tw-tx', `${Math.cos(angle) * velocity}px`);
             heart.style.setProperty('--tw-ty', `${Math.sin(angle) * velocity - 50}px`);
             heart.style.setProperty('--tw-scale', 0.5 + Math.random());
             heart.style.setProperty('--tw-rotation', `${Math.random() * 360}deg`);
-            
             heart.style.left = `${centerX}px`;
             heart.style.top = `${centerY}px`;
             heart.style.fontSize = '24px';
@@ -259,24 +239,18 @@
         }
     }
 
-    // 5. 편지 이미지 저장
+    // 5. 편지 저장
     function saveLetterAsImage(event) {
         const letterElement = document.getElementById('letter-card-capture');
         const saveBtn = event.currentTarget;
         const originalContent = saveBtn.innerHTML;
-
         saveBtn.innerHTML = '처리 중...';
         saveBtn.disabled = true;
-
         html2canvas(letterElement, { scale: 2, useCORS: true }).then(canvas => {
             const link = document.createElement('a');
             link.download = '우리의_200일_편지.png';
             link.href = canvas.toDataURL();
             link.click();
-            saveBtn.innerHTML = originalContent;
-            saveBtn.disabled = false;
-        }).catch(() => {
-            alert('저장 중 오류가 발생했습니다.');
             saveBtn.innerHTML = originalContent;
             saveBtn.disabled = false;
         });
@@ -286,7 +260,7 @@
     document.addEventListener('mousemove', (e) => {
         if (Math.random() > 0.1) return;
         const heart = document.createElement('span');
-        heart.className = 'material-symbols-outlined cursor-heart';
+        heart.className = 'material-symbols-outlined cursor-heart text-xs';
         heart.textContent = 'favorite';
         heart.style.left = e.clientX + 'px';
         heart.style.top = e.clientY + 'px';
