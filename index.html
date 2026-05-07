@@ -42,7 +42,6 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        /* 편지 배경 질감 효과 */
         .bg-stationery {
             background-color: #ffffff;
             background-image: 
@@ -93,6 +92,16 @@
           z-index: 100;
           animation: heart-burst 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         }
+        
+        /* 메뉴 활성화 스타일 (수정된 부분) */
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link.active {
+            color: #f43f5e; /* rose-500 */
+            font-weight: 600;
+            border-bottom: 2px solid #facc15; /* yellow-400 */
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface">
@@ -100,167 +109,7 @@
 <header class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-md border-b border-yellow-200/30">
     <nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
         <div class="text-2xl font-bold text-rose-400 italic font-headline-lg">혜리 ❤️ 세환의 스케치북</div>
-        <div class="hidden md:flex gap-8 items-center">
-            <a class="text-rose-500 font-semibold border-b-2 border-yellow-400" href="#hero">우리의 순간</a>
-            <a class="text-rose-300/80 hover:text-rose-500" href="#gallery">추억 갤러리</a>
-            <a class="text-rose-300/80 hover:text-rose-500" href="#letter">나의 단짝 혜리에게</a>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <section class="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden" id="hero">
-        <div class="absolute inset-0 pointer-events-none">
-            <span class="material-symbols-outlined absolute text-rose-200 floating-heart text-4xl" style="top: 20%; left: 10%;">favorite</span>
-            <span class="material-symbols-outlined absolute text-rose-100 floating-heart text-5xl" style="top: 15%; left: 75%;">favorite</span>
-        </div>
-        <div class="relative z-10 text-center px-4">
-            <h1 class="font-display-lg text-6xl text-primary mb-8">우리가 만난 지</h1>
-            <div class="inline-flex flex-col items-center gap-4 bg-white/40 backdrop-blur-xl p-12 rounded-[3rem] border border-white/60 shadow-xl">
-                <div class="text-sm text-gray-500 mb-2">Since 2025.10.23</div>
-                <div class="flex items-baseline gap-2">
-                    <span class="text-7xl md:text-9xl text-primary font-bold" id="d-day-counter">0</span>
-                    <span class="text-3xl text-primary">일</span>
-                </div>
-                <p class="text-lg text-gray-600 max-w-md mt-4">함께 웃고 울며 쌓아온 소중한 시간들.<br>앞으로도 평생 함께할 우리를 위해.</p>
-            </div>
-            <div class="mt-12">
-                <button class="px-8 py-4 bg-gradient-to-r from-pink-50 to-pink-200 rounded-full text-primary font-bold shadow-lg hover:scale-105 transition-all" onclick="createHeartBurst(event)">
-                    나의 마음 전하기 ❤️
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 px-8 max-w-7xl mx-auto" id="gallery">
-        <div class="text-center mb-20 reveal">
-            <span class="inline-block px-4 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-bold mb-4">Memory Archives</span>
-            <h2 class="text-4xl text-primary font-bold">우리의 소중한 기록들</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="bg-white p-3 rounded-2xl shadow-sm border border-pink-50"><div class="aspect-square bg-gray-100 rounded-xl overflow-hidden"><img src="https://lh3.googleusercontent.com/aida/ADBb0ujBSNw_ahz_UbZYN6_NQrGkFm0ggmvbL0Wi9bk_trNaRlaKL9NkhnLsJcO3rsAb0tyrbmRSzI2lvSrTFZ6KpCP0E_3rmwBPerKT5N23b4zMazk14jSBRh1shcToALcdMYIn-hU5YZv-d92PetKTNJa-WtRp9Ze73HdIOK7MaNxslvYOkQ2T-9akRLwQ-i9BcW-G2KbB1N9bn7FOokZQrmrWvlpgMzaF35bNrBxctMm4YVi1jOBKNTsoaVKtr3HPHwu2BqRtBso27g" class="w-full h-full object-cover"></div></div>
-            <div class="bg-white p-3 rounded-2xl shadow-sm border border-pink-50"><div class="aspect-square bg-gray-100 rounded-xl overflow-hidden"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrBcWYoqQA_F-jec1yp9oT38m3YJdMGV3N4Ttv8-Ub2mm-LFwGpIfqN-cWqESsZ2KF0zHdDWmWac_zHY9BdUdiAPXQRQ2MloW1EEe6jWF4dw3xdOORFJUZ0mMae61nx--6-d-KGHrLW2r95WMmj6kfE_JLPi5zXL4wthwd-s6yws_VyNDEetbnM0liIzF5k5safDaXpka_EYlfwuAzALHNx4_AI6qyjs5gyS6r6mxtza7q27EnRbyspqoRpa0g49m_KZ7lk7lCjK0" class="w-full h-full object-cover"></div></div>
-            <div class="bg-white p-3 rounded-2xl shadow-sm border border-pink-50"><div class="aspect-square bg-gray-100 rounded-xl overflow-hidden"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOMQKBXbnSFhofBmA1RJ0_Rv5isU5K9vv7xeDDRCs-SHLe9rZVE6ibN6GhrcXKtv_U8xIiBKyZaFmufLz8Th24uxfhnMzv1Byzdyl4-wQ9_ZALinyUuL1BtuxD9QbpCjgCJgg2GkBMoPOg-5M0-9qn3r97O4h9FkgfYzfm--dz59bL0xukepQa5O0tI1IgSfJSLsmaV7N8vUOW6xc7XFbiap9ii9fDTVLuwieQL_6bpAQCMr79LhkF4uuXJmA5lZ4pa-BfqqFrlQ" class="w-full h-full object-cover"></div></div>
-            <div class="bg-white p-3 rounded-2xl shadow-sm border border-pink-50"><div class="aspect-square bg-gray-100 rounded-xl overflow-hidden"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAafZINKPjgKm2J4Ta7tNMRE-2TsgENui5G8etLjw2Jy_qOxOgLCC-eTYwJKp9SckQFsqoLdnsjaqVYgiS0uHKbtREo-qqx28ImsG_momRnuldnVmf7DXAmvBEZsfUZ7PQvof_7JvZPf21jP0YPUhiDOIaUbz7f2lUKEYaLUBAIU1u7BMZ6PQ9wZWCNSvIwH3XHgDyv6JblxVwmHY3enYDd5JBN9bb9cpQCondHt2QQd8OasR7Up7_xhAO6OeV3lJ3J9RmpNfGcBSg" class="w-full h-full object-cover"></div></div>
-        </div>
-    </section>
-
-    <section class="py-20 relative" id="letter">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="bg-stationery p-12 md:p-24 rounded-[4rem] shadow-2xl border border-yellow-100/50 relative overflow-hidden group reveal" id="letter-card-capture">
-                <div class="absolute top-12 right-12 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg transform rotate-12">
-                    <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
-                </div>
-                <div class="relative z-10 space-y-12">
-                    <div class="text-center">
-                        <h3 class="text-3xl text-primary italic font-serif">My Dearest...</h3>
-                        <div class="w-16 h-px bg-yellow-400 mx-auto mt-4"></div>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-10 rounded-[2rem] border border-rose-100/50">
-                        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif text-center">
-                            혜리야 안녕? 너의 남자친구 세환이야ㅎㅎ 갑자기 이 홈페이지를 보고 놀랐을거야ㅎ.ㅎ 사실 내가 조금씩 너에게 200일에 보여주려고 만든 홈페이지인데, 너가 맘에 들어하면 좋겠어! 우리의 200일은 앞으로 만날 날에 비하면 이제 시작이라고 생각해❤️ 지금처럼 우리 잘 지내고, 오늘 이 편지를 쓰는 게 너가 기분이 좋지 않았던 날이었는데, 서로 자신의 의도와는 다르게 속상하게 할 수 있지만, 속상하게 했다면 미안하다고 말하고, 내 진심은 그래도 너를 향해있다는 것을 알아줬으면 좋겠어..!!
-                        </p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-lg text-primary italic">혜리의 단짝 친구</p>
-                        <p class="text-2xl text-primary font-bold">세환이가</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-12 flex justify-center">
-                <button class="px-12 py-5 bg-primary text-white rounded-full font-bold shadow-xl hover:scale-105 transition-all flex items-center gap-3" onclick="saveLetterAsImage(event)">
-                    편지 저장하기 <span class="material-symbols-outlined">send</span>
-                </button>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer class="py-12 text-center border-t border-yellow-100">
-    <p class="font-serif italic text-rose-300">© 2026 혜리를 위한 홈페이지 ❤️ 세환</p>
-</footer>
-
-<script>
-    // 1. D-Day 계산
-    (function() {
-        const startDate = new Date('2025-10-23');
-        const today = new Date();
-        startDate.setHours(0,0,0,0);
-        today.setHours(0,0,0,0);
-        const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
-        document.getElementById('d-day-counter').textContent = diffDays;
-    })();
-
-    // 2. 스크롤 애니메이션
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // 3. 하트 버스트 효과
-    function createHeartBurst(event) {
-        const btn = event.currentTarget;
-        const rect = btn.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        
-        for (let i = 0; i < 12; i++) {
-            const heart = document.createElement('span');
-            heart.className = 'material-symbols-outlined heart-particle text-rose-400';
-            heart.textContent = 'favorite';
-            heart.style.fontVariationSettings = "'FILL' 1";
-            
-            const angle = (i / 12) * Math.PI * 2;
-            const velocity = 50 + Math.random() * 100;
-            heart.style.setProperty('--tw-tx', `${Math.cos(angle) * velocity}px`);
-            heart.style.setProperty('--tw-ty', `${Math.sin(angle) * velocity - 50}px`);
-            heart.style.setProperty('--tw-scale', 0.5 + Math.random());
-            heart.style.setProperty('--tw-rotation', `${Math.random() * 360}deg`);
-            
-            heart.style.left = `${centerX}px`;
-            heart.style.top = `${centerY}px`;
-            heart.style.fontSize = '24px';
-            document.body.appendChild(heart);
-            heart.addEventListener('animationend', () => heart.remove());
-        }
-    }
-
-    // 4. 편지 이미지 저장 (event 매개변수 추가 수정)
-    function saveLetterAsImage(event) {
-        const letterElement = document.getElementById('letter-card-capture');
-        const saveBtn = event.currentTarget;
-        const originalContent = saveBtn.innerHTML;
-
-        saveBtn.innerHTML = '처리 중...';
-        saveBtn.disabled = true;
-
-        html2canvas(letterElement, { scale: 2, useCORS: true }).then(canvas => {
-            const link = document.createElement('a');
-            link.download = '우리의_200일_편지.png';
-            link.href = canvas.toDataURL();
-            link.click();
-            saveBtn.innerHTML = originalContent;
-            saveBtn.disabled = false;
-        }).catch(() => {
-            alert('저장 중 오류가 발생했습니다.');
-            saveBtn.innerHTML = originalContent;
-            saveBtn.disabled = false;
-        });
-    }
-
-    // 5. 마우스 하트 트레일
-    document.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.1) return;
-        const heart = document.createElement('span');
-        heart.className = 'material-symbols-outlined cursor-heart';
-        heart.textContent = 'favorite';
-        heart.style.left = e.clientX + 'px';
-        heart.style.top = e.clientY + 'px';
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 1000);
-    });
-</script>
-</body>
-</html>
+        <div class="hidden md:flex gap-8 items-center" id="nav-menu">
+            <a class="nav-link text-rose-300/80 hover:text-rose-500 py-1" href="#hero">우리의 순간</a>
+            <a class="nav-link text-rose-300/80 hover:text-rose-500 py-1" href="#gallery">추억 갤러리</a>
+            <a class="nav-link text-rose-300/80 hover:text-
